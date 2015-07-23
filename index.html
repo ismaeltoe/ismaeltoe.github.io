@@ -1,1 +1,37 @@
-"Hello World" 
+---
+layout: null
+title: Home
+---
+
+<!doctype html>
+<html class="no-js">
+  <head>
+    {% include head.html %}
+    <style>
+      #content {
+        background-color: #272727;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-3 medium-3 columns" id="sidebar">
+        {% include sidebar.html %}
+        <div id="it"></div>
+      </div>
+      <div class="large-9 medium-9 columns" id="content">
+        <section id="articles">
+          {% for post in site.posts %}
+          <a href="{{ post.url }}" class="{{ post.color }}">
+            <article>
+              <h2>{{ post.title }}</h2>
+              <p>{{ post.excerpt | strip_html }}</p>
+            </article>
+          </a>
+          {% endfor %}
+        </section>
+      </div>
+    </div>
+    {% include script.html %}
+  </body>
+</html>

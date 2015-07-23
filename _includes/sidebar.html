@@ -1,0 +1,22 @@
+<h1><a href="{{ site.baseurl }}">IT.</a></h1>
+<nav>
+  <ul>
+    <li><a href="{{ site.baseurl }}">Home</a></li>
+    {% assign pages_list = site.pages %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <li><a href="{{ node.url }}">{{ node.title }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <ul id="social">
+    <li>
+      <a target="_blank" href="{{ site.author.twitter }}">twitter</a>
+    </li>
+    <li>
+      <a href="mailto:{{ site.author.email }}">email</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,17 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink: pretty
+relative_permalinks: true
+
+# Setup
+title: Ismael Toé
+tagline: Web & Mobile Developer
+url: http://ismaeltoe.github.io
+#paginate: 1
+baseurl: /
+
+author:
+  name: Ismael Toé
+  twitter: https://twitter.com/ismaeltoe
+  email: ismael.toe@gmail.com

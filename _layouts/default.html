@@ -1,0 +1,17 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-3 medium-3 columns" id="sidebar">
+        {% include sidebar.html %}
+      </div>
+      <div class="large-9 medium-9 columns" id="content">
+        {{ content }}
+      </div>
+    </div>
+    {% include script.html %}
+  </body>
+</html>

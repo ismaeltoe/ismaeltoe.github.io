@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    {% include head.html %}
+    <style>
+      #sidebar {
+        background-color: #272727;
+      }
+      
+      #sidebar h1 {
+        color: #fff;
+      }
+
+      #sidebar nav ul li a {
+        color: #686868;
+      }
+
+      #sidebar nav ul li a:hover {
+        color: #ccc;
+      }
+
+      #content > article:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 3px;
+        pointer-events: none;
+      }
+
+      #content > article:before {
+        background-color: {{ page.color }};
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-3 medium-3 columns" id="sidebar">
+        {% include sidebar.html %}
+      </div>
+      <div class="large-9 medium-9 columns" id="content">
+        <article>
+          <h2>{{ page.title }}</h2>
+          {{ content }}
+          <time class="pubdate" datetime="{{ page.date | date_to_xmlschema }}">Published {{ page.date | date_to_string }}</time>
+        </article>
+      </div>
+    </div>
+    {% include script.html %}
+  </body>
+</html>
